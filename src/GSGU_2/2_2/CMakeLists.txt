@@ -1,0 +1,5 @@
+add_subdirectory(1_DrawBoard)
+add_subdirectory(2_DrawBoard)
+add_subdirectory(3_DrawBoard)
+add_subdirectory(4_ObjectTree)
+add_subdirectory(5_Timer)

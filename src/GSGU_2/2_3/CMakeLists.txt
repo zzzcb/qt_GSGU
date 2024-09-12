@@ -1,0 +1,5 @@
+add_subdirectory(1_CrazyHttpClient)
+add_subdirectory(2_SimpleHttpServer)
+add_subdirectory(3_MagicObject)
+add_subdirectory(4_ArgParser)
+

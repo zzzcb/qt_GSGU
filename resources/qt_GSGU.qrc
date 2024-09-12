@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+		<file>qss/vs_2022.qss</file>
+    </qresource>
+</RCC>
