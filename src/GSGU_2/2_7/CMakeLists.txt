@@ -1,8 +1,8 @@
-add_subdirectory(1_Basic)
-add_subdirectory(2_KeyboardInput)
-add_subdirectory(3_ComboBox)
-add_subdirectory(4_Dialog)
-add_subdirectory(5_Slider)
-add_subdirectory(6_SpinBox)
-add_subdirectory(7_Frame)
+add_subdirectory(1_BuiltinLayout)
+add_subdirectory(2_LayoutAllocate)
+add_subdirectory(3_LayoutAdjust)
+add_subdirectory(4_LayoutNest)
+add_subdirectory(5_LayoutDynamic)
+add_subdirectory(6_CustomLayout)
+
 
