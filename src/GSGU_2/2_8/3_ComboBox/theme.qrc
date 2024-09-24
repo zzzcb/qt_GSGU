@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+		<file>images/arrow.svg</file>
+		<file>images/audiosource.svg</file>
+		<file>images/beam.svg</file>
+		<file>images/clock.svg</file>
+		<file>images/diamond.svg</file>
+    </qresource>
+</RCC>
