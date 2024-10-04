@@ -2,12 +2,12 @@
 # Find all necessary and optional qt_GSGU dependencies
 #######################################################################
 
-# qt,°²×°Qt6,²¢½«binÂ·¾¶Ìí¼Óµ½»·¾³±äÁ¿ÖĞ¡£cmake²éÕÒ¹ı³ÌÊÇ»áµ½binµÄÉÏ¼¶ÖĞµÄlibÖĞ²éÕÒµÄ£¬ËùÒÔ¿ÉÒÔÕÒµ½Qt6Config.cmake
-find_package(Qt6 REQUIRED COMPONENTS Core Widgets Concurrent Network)
-qt_standard_project_setup()                 # Qt6±ê×¼¹¤³ÌÅäÖÃ£¨»á¿ªÆô×Ô¶¯MOCºÍUIC£©
-set(CMAKE_AUTORCC ON)                       # ¿ªÆô×Ô¶¯RCC
+# qt,å®‰è£…Qt6,å¹¶å°†binè·¯å¾„æ·»åŠ åˆ°ç¯å¢ƒå˜é‡ä¸­ã€‚cmakeæŸ¥æ‰¾è¿‡ç¨‹æ˜¯ä¼šåˆ°binçš„ä¸Šçº§ä¸­çš„libä¸­æŸ¥æ‰¾çš„ï¼Œæ‰€ä»¥å¯ä»¥æ‰¾åˆ°Qt6Config.cmake
+find_package(Qt6 REQUIRED COMPONENTS Core Widgets OpenGLWidgets Concurrent Network Multimedia PdfWidgets)
+qt_standard_project_setup()                 # Qt6æ ‡å‡†å·¥ç¨‹é…ç½®ï¼ˆä¼šå¼€å¯è‡ªåŠ¨MOCå’ŒUICï¼‰
+set(CMAKE_AUTORCC ON)                       # å¼€å¯è‡ªåŠ¨RCC
 
-# OpenCV,WindowsÆ½Ì¨¹Ì¶¨Ä¿Â¼ÅäÖÃOpenCVÒÀÀµ,ºóĞò¾Í¿ÉÒÔÊ¹ÓÃÍ·ÎÄ¼şºÍLibÁË
+# OpenCV,Windowså¹³å°å›ºå®šç›®å½•é…ç½®OpenCVä¾èµ–,ååºå°±å¯ä»¥ä½¿ç”¨å¤´æ–‡ä»¶å’ŒLibäº†
 if(MSVC)
 	set(OpenCV_INC_DIR "D:/dependency/OPENCV346/include")
 	set(OpenCV_LIBS "D:/dependency/OPENCV346/x64/vc15/lib/opencv_world346.lib")
