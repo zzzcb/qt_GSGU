@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+		<file>images/import.svg</file>
+		<file>images/listview.svg</file>
+		<file>images/iconview.svg</file>
+	</qresource>
+</RCC>
