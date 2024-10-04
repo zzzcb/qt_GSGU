@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/">
+		<file>images/matrix.png</file>
+		<file>camera_intrparm.md</file>
+		<file>images/finish.svg</file>
+	</qresource>
+</RCC>
