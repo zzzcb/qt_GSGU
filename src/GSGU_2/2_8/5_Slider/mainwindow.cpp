@@ -74,17 +74,15 @@ MainWindow::~MainWindow()
 
 void MainWindow::slot_openAudio()
 {
-	QString fileName = QFileDialog::getOpenFileName(nullptr, "Open Audio File", "", "Audio Files (*.mp3 *.aac)");
+	QString fileName = QFileDialog::getOpenFileName(nullptr, "Open Audio File", "", "Audio Files (*.mp3 *.aac *.wav *.ogg)");
 	if (!fileName.isEmpty())
 	{
 		QFileInfo f(fileName);
 		m_pAudioName->setText(f.fileName());
 
-		AudioDecoder decoder;
-		// 打开音频文件并解码
-		if (decoder.openFile(fileName)) 
+		Global::pcmData.clear();
+		if (AudioDecoder::decode(fileName))
 		{
-			decoder.decode();
 			m_pAudioWave->updateAudioData();
 			m_pAudioPlayer->updatePcm();
 			slot_setVolume(m_pAudioVolume->value());

@@ -13,18 +13,7 @@ extern "C" {
 class AudioDecoder
 {
 public:
-	AudioDecoder();
-	~AudioDecoder();
-
-	bool openFile(const QString& filePath);
-	void decode();
-
-private:
-	AVFormatContext* formatContext;
-	AVCodecContext* codecContext;
-	SwrContext* swrContext;
-	int audioStreamIndex;
+	static bool decode(const QString& filePath);
 };
-
 
 #endif 
