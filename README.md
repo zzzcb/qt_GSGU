@@ -17,6 +17,10 @@ QQ        QQ       TT       GG      GGGGGG   SSSSSS   GG      GGGGGG UU      UU
 
 > PPT链接: https://pan.baidu.com/s/1aqZLghVKhk0K6h6r2k-KKw?pwd=g8uu
 
+> Github仓库: https://github.com/zzzcb/qt_GSGU
+
+> Gitee仓库: https://gitee.com/changbozhang/qt_GSGU
+
 ### 工程代码说明
 - 构建工具采用CMake(>=3.16)
 - Qt版本采用Qt6.7.2
