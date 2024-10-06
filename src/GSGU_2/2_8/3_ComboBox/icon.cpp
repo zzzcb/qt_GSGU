@@ -15,8 +15,22 @@ QIcon createIconFromSVG(const QString& svgFile)
 		p.fillRect(normal.rect(), QColor(32,32,32));
 		p.end();
 	}
-
+	
 	QIcon icon;
-	icon.addPixmap(normal);
+	icon.addPixmap(normal, QIcon::Normal);
+
+
+	////禁用状态
+	//QPixmap disabled(normal.size());
+	//disabled.fill(Qt::transparent);
+
+	//p.begin(&disabled);
+	//p.setCompositionMode(QPainter::CompositionMode_DestinationOver);
+	//p.setOpacity(0.5);
+	//p.drawPixmap(0, 0, normal);
+	//p.end();
+
+	//icon.addPixmap(disabled, QIcon::Disabled);
+
 	return icon;
 }

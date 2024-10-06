@@ -87,7 +87,8 @@ void MainWindow::setupUi()
 	leftBar->addAction(createIconFromSVG(":/images/audiosource.svg"), "audiosource");
 	leftBar->addAction(createIconFromSVG(":/images/beam.svg"), "beam");
 	leftBar->addAction(createIconFromSVG(":/images/clock.svg"), "clock");
-	leftBar->addAction(createIconFromSVG(":/images/diamond.svg"), "diamond");
+	/*auto act =*/leftBar->addAction(createIconFromSVG(":/images/diamond.svg"), "diamond");
+	//act->setEnabled(false);
 	addToolBar(Qt::LeftToolBarArea,leftBar);
 
 

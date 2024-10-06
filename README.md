@@ -15,7 +15,7 @@ QQ        QQ       TT       GG      GGGGGG   SSSSSS   GG      GGGGGG UU      UU
 
 > 视频链接: https://www.bilibili.com/video/BV1824y1d7kM
 
-> PPT链接: https://pan.baidu.com/s/1aqZLghVKhk0K6h6r2k-KKw?pwd=g8uu
+> PPT/开发环境/软件网盘链接: https://pan.baidu.com/s/1aqZLghVKhk0K6h6r2k-KKw?pwd=g8uu
 
 > Github仓库: https://github.com/zzzcb/qt_GSGU
 
