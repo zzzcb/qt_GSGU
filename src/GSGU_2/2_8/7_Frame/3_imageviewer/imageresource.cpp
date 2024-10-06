@@ -1,4 +1,4 @@
-#include "imageviewer.h"
+#include "imageresource.h"
 
 #include <QHBoxLayout>
 #include <QVBoxLayout>
@@ -11,8 +11,9 @@
 #include <QWheelEvent>
 
 #define ICONSIZE 30
+int ImageFullPath_Role = Qt::UserRole + 1;
 
-ImageViewer::ImageViewer(QWidget* parent /*= nullptr*/)
+ImageResource::ImageResource(QWidget* parent /*= nullptr*/)
 	:QWidget(parent)
 {
 	auto mainLayout = new QVBoxLayout(this);
@@ -44,21 +45,27 @@ ImageViewer::ImageViewer(QWidget* parent /*= nullptr*/)
 	m_pListView->setIconSize(QSize(ICONSIZE, ICONSIZE));
 	m_pIconView->setIconSize(QSize(ICONSIZE, ICONSIZE));
 	m_pIconView->setGridSize(QSize(ICONSIZE, ICONSIZE));
+	
+	m_pListView->setEditTriggers(QAbstractItemView::NoEditTriggers);
+	m_pIconView->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+	connect(m_pListView, &QListView::clicked, this, &ImageResource::slot_imageClicked);
+	connect(m_pIconView, &QListView::clicked, this, &ImageResource::slot_imageClicked);
 
 	m_pStackedWidget->installEventFilter(this);
 
 	//信号槽
-	connect(importBtn, &QToolButton::clicked, this, &ImageViewer::slot_importImage);
-	connect(listBtn, &QToolButton::clicked, this, &ImageViewer::slot_listView);
-	connect(iconBtn, &QToolButton::clicked, this, &ImageViewer::slot_iconView);
+	connect(importBtn, &QToolButton::clicked, this, &ImageResource::slot_importImage);
+	connect(listBtn, &QToolButton::clicked, this, &ImageResource::slot_listView);
+	connect(iconBtn, &QToolButton::clicked, this, &ImageResource::slot_iconView);
 }
 
-ImageViewer::~ImageViewer()
+ImageResource::~ImageResource()
 {
 
 }
 
-bool ImageViewer::eventFilter(QObject* watched, QEvent* event)
+bool ImageResource::eventFilter(QObject* watched, QEvent* event)
 {
 	if (watched == m_pStackedWidget)
 	{
@@ -88,7 +95,7 @@ bool ImageViewer::eventFilter(QObject* watched, QEvent* event)
 	return QWidget::eventFilter(watched, event);
 }
 
-void ImageViewer::slot_importImage()
+void ImageResource::slot_importImage()
 {
 	auto filePaths = QFileDialog::getOpenFileNames(this, "请选择图片", ".", "图片(*.jpg *.png *.bmp)");
 
@@ -101,17 +108,26 @@ void ImageViewer::slot_importImage()
 		QPixmap thumbnail(filePath);
 		item->setIcon(thumbnail);
 		item->setText(QFileInfo(filePath).fileName());
+		item->setData(filePath, ImageFullPath_Role);
 
 		m_pModel->appendRow(item);
 	}
 }
 
-void ImageViewer::slot_listView()
+void ImageResource::slot_listView()
 {
 	m_pStackedWidget->setCurrentIndex(0);
 }
 
-void ImageViewer::slot_iconView()
+void ImageResource::slot_iconView()
 {
 	m_pStackedWidget->setCurrentIndex(1);
+}
+
+void ImageResource::slot_imageClicked(const QModelIndex& index)
+{
+	auto item = m_pModel->itemFromIndex(index);
+	auto imagePath =  item->data(ImageFullPath_Role).toString();
+
+	emit signal_imageLooking(imagePath);
 }
