@@ -1,4 +1,13 @@
-# qt_GSGU 2.0
+# qt_GSGU
+```
+    QQQQ     TTTTTTTTTTTTTT     GGGGG         SSSSS       GGGGG      UU      UU
+  QQ    QQ         TT         GG            SS          GG           UU      UU
+ QQ      QQ        TT        GG            SS          GG            UU      UU
+QQ        QQ       TT       GG      GGGGGG   SSSSSS   GG      GGGGGG UU      UU
+ QQ   QQ QQ        TT        GG       GG           SS  GG       GG   UU      UU
+  QQ    QQ         TT         GG     GGG          SS    GG     GGG   UU      UU
+    QQQQ  QQ       TT          GGGGGG  G     SSSSS       GGGGGG  G    UUUUUUUU
+```
 
 ### 介绍
 欢迎来到qt_GSGU,这里是Qt Framework相关教程代码仓库，致力于带你从入门到"放弃"(doge)。 教程按照**模块**、**继承结构**等思路进行构建。
