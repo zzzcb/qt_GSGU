@@ -1,0 +1,9 @@
+{
+  "dependencies": [
+    {
+      "name": "pcl",
+      "features": [ "visualization" ]
+    }
+  ],
+  "builtin-baseline": "86fba13068f1e8111e7d885de2aef11378435139"
+}

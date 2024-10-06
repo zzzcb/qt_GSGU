@@ -1,0 +1,9 @@
+{
+  "dependencies": [
+    {
+      "name": "vtk",
+      "features": [ "qt" ]
+    }
+  ],
+  "builtin-baseline": "86fba13068f1e8111e7d885de2aef11378435139"
+}
